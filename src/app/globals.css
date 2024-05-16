@@ -38,11 +38,13 @@ input[type="email"]:disabled,
 input[type="password"]:disabled,
 input[type="tel"]:disabled,
 input[type="text"]:disabled {
+    font-size: medium;
     @apply bg-gray-300 border-0 cursor-not-allowed text-gray-500;
 }
 button[type="submit"] ,button{
     display: block;
     margin: auto;
+    font-size: medium;
     background-color: #c23616;
     color: #fff;
     padding: 10px 50px;
