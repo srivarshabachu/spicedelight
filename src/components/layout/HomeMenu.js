@@ -1,6 +1,8 @@
+'use client'
 import './layoutstyles.css'
 import Image from 'next/image'
 import MenuItem from '../menu/MenuItem'
+import { useState } from 'react';
 export default function HomeMenu() {
     return (
         <section className='HomeMenu'>

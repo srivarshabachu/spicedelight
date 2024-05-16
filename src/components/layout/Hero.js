@@ -1,5 +1,7 @@
+'use client'
 import './layoutstyles.css'
 import Image from 'next/image'
+import { useState } from 'react';
 export default function Hero() {
     return (
         <section className='hero'>

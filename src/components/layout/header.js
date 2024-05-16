@@ -1,8 +1,9 @@
+'use Client'
 import Link from "next/link";
+import { useState } from 'react';
 export default function Header() {
     return (
         <header className="flex justify-between">
-            
             <nav className="list">
                 <Link className="roboto text-primary font-semibold text-3xl" href="/">SpiceDelight</Link>
                 <Link className="listfont" href={'/'}>Home</Link>

@@ -1,4 +1,6 @@
+'use client'
 import Header from '/src/components/layout/header'
+import { useState } from 'react';
 import Hero from "/src/components/layout/Hero";
 import HomeMenu from "/src/components/layout/HomeMenu";
 import './globals.css'

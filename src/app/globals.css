@@ -21,6 +21,33 @@ section.hero{
     grid-template-columns: .7fr .7fr;
 }
 input[type="email"] , input[type="password"],input[type="text"]{
-    @apply block w-full my-4 rounded-2xl;
-    @apply block border p-2 bg-gray-300 border-0 text-gray-500;
+    display: block;
+    margin: auto;
+    background-color: #c23616;
+    color: #fff;
+    padding: 10px 40px;
+    border-radius: 9999px;
+    text-align: center;
+    font-size: large;
+    align-items: center;
+    width: 30%;
+    @apply block  my-4 rounded-2xl;
+    @apply block border p-2 bg-gray-200 border-0 text-gray-500;
+}
+input[type="email"]:disabled,
+input[type="password"]:disabled,
+input[type="tel"]:disabled,
+input[type="text"]:disabled {
+    @apply bg-gray-300 border-0 cursor-not-allowed text-gray-500;
+}
+button[type="submit"] ,button{
+    display: block;
+    margin: auto;
+    background-color: #c23616;
+    color: #fff;
+    padding: 10px 50px;
+    border-radius: 9999px;
+    text-align: center;
+    font-size: large;
+    align-items: center;
 }
