@@ -10,7 +10,7 @@ export default function Hero() {
                     <span className='text-biryani'>Biryani </span>
                     makes everything better.</h1>
                 <p className="text-1xl my-6">In a world full of options, choose biryani.</p>
-                <div className="flex gap-5 py-6">
+                <div className="flex gap-5 py-4">
                     <button className="menuimg bg-primary text-white rounded-full px-6 py-2.5 ">Order Now</button>
                     <button className="menuimg flex-gap-2">Learn more</button>
                 </div>
