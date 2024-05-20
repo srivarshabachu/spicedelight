@@ -3,6 +3,7 @@ import React from 'react'
 import Image from 'next/image'
 import { useState } from 'react';
 import Link from 'next/link';
+import { signIn } from "next-auth/react";
 const Registerpage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -23,7 +24,7 @@ const Registerpage = () => {
         body: JSON.stringify({ email, password }),
       }
     );
-    console.log({email ,password})
+    console.log({ email, password })
     if (response.ok) {
       setUserCreated(true);
       setEmail('');
@@ -52,14 +53,14 @@ const Registerpage = () => {
           Please try again later
         </div>
       )}
-      <form className='' onSubmit={handleFormSubmit}> 
-        <input type="email" placeholder="email" value={email} disabled={creatingUser}  onChange={ev => setEmail(ev.target.value)} />
+      <form className='' onSubmit={handleFormSubmit}>
+        <input type="email" placeholder="email" value={email} disabled={creatingUser} onChange={ev => setEmail(ev.target.value)} />
         <input type="password" placeholder="password" value={password} disabled={creatingUser} onChange={ev => setPassword(ev.target.value)} />
         <button type='submit' disabled={creatingUser}>Register</button>
         <div>
           <p className='text-center py-4'>&lt; or &gt;</p>
-          <button className='flex gap-4 justify-center bg-white text-primary border'>
-            <Image src={'/googlelogo.png'} width={"25"} height={"20"}  alt={{}} />
+          <button onClick={() => signIn('google', { callbackUrl: '/' })} className='flex gap-4 justify-center bg-white text-primary border'>
+            <Image src={'/googlelogo.png'} width={"25"} height={"20"} alt={{}} />
             Login with google</button>
         </div>
         <div className="text-center my-4 text-gray-500 border-t pt-4">

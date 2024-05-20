@@ -13,7 +13,8 @@ export default function LoginPage() {
         setLoginInProgress(true);
         await signIn('credentials', { email, password, callbackUrl: '/' });
         setLoginInProgress(false);
-    }
+    };
+    
     return (
         <section className="mt-9" style={{ fontFamily: 'Gill Sans' }}>
             <h1 className="text-center text-primary text-4xl mb-4">
