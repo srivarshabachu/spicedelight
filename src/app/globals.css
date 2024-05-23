@@ -20,7 +20,7 @@ section.hero{
     @apply grid;
     grid-template-columns: .7fr .7fr;
 }
-input[type="email"] , input[type="password"],input[type="text"]{
+input[type="email"] ,input[type="tel"], input[type="password"],input[type="text"]{
     display: block;
     margin: auto;
     background-color: #c23616;
@@ -30,18 +30,30 @@ input[type="email"] , input[type="password"],input[type="text"]{
     text-align: center;
     font-size: large;
     align-items: center;
-    width: 30%;
+    width: 45%;
     @apply block  my-4 rounded-2xl;
     @apply block border p-2 bg-gray-200 border-0 text-gray-500;
 }
 input[type="email"]:disabled,
-input[type="password"]:disabled,
 input[type="tel"]:disabled,
+input[type="password"]:disabled,
 input[type="text"]:disabled {
-    font-size: medium;
-    @apply bg-gray-300 border-0 cursor-not-allowed text-gray-500;
+    @apply bg-gray-300 border-0 cursor-not-allowed text-gray-100;
 }
-button[type="submit"] ,button{
+.grow> input[type = "email"] , input[type = "text"]{
+    background-color: #c23616;
+    color: #fff;
+    padding: 10px 40px;
+    font-size: large;
+    width: 100%;
+    @apply block my-4 rounded-2xl;
+    @apply block border p-2 bg-gray-200 border-0 text-gray-500;
+}
+button{
+    text : block;
+    border: black;
+}
+button[type="submit"]{
     display: block;
     margin: auto;
     font-size: medium;
@@ -52,4 +64,15 @@ button[type="submit"] ,button{
     text-align: center;
     font-size: large;
     align-items: center;
+}
+div.tabs>* {
+    @apply bg-gray-300 text-gray-700 rounded-full py-2 px-6;
+}
+
+div.tabs>*.active {
+    @apply bg-primary text-white;
+}
+
+.flying-button-parent button {
+    @apply border-primary bg-primary text-white rounded-full;
 }

@@ -5,8 +5,12 @@ import Link from "next/link";
 import { useState } from 'react';
 export default function Header() {
     const session = useSession();
-    const status = session.status;
-    console.log(session)
+    const status = session?.status;
+    const userData = session.data?.user;
+    let userName = userData?.name || userData?.email;
+    if (userName && userName.includes(' ')) {
+        userName = userName.split(' ')[0];
+    }
     return (
         <header className="flex justify-between">
             <nav className="list">
@@ -18,7 +22,7 @@ export default function Header() {
             </nav>
             <nav className="list">
                 {status === 'authenticated' && (
-                    <> <Link href={'/profile'} className="listfont text-primary px-4 py-2 rounded-full">Profile</Link>
+                    <> <Link href={'/profile'} className="listfont text-primary px-4 py-2 rounded-full"> Hello!! { userName}</Link>
                         <button onClick={() => signOut()} className="listfont bg-primary text-white px-4 py-2 rounded-full">Logout</button></>
                     
                 )}

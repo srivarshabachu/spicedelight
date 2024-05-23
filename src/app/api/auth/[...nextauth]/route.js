@@ -3,10 +3,10 @@ import clientPromise from "../../../libs/mongoConnect"
 import CredentialsProvider from "next-auth/providers/credentials"
 import GoogleProvider from "next-auth/providers/google";
 import bcrypt from "bcrypt";
-import User from '../../../models/user'
+import User from '../../../models/User'
 import mongoose from "mongoose";
 import { MongoDBAdapter } from "@auth/mongodb-adapter";
-const handler = NextAuth({
+export const authOptions = {
     secret: process.env.SECRET,
     adapter: MongoDBAdapter(clientPromise),
     providers: [
@@ -33,6 +33,7 @@ const handler = NextAuth({
         })
     ]
 
-})
+}
+const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST }
