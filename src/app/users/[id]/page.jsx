@@ -47,7 +47,7 @@ export default function EditUserPage() {
         return 'Loading user profile...';
     }
 
-    if (!data._doc.admin) {
+    if (!data.admin) {
         return 'Not an admin';
     }
 

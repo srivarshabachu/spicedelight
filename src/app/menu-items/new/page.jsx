@@ -41,7 +41,7 @@ export default function NewMenuItemPage() {
         return 'Loading user info...';
     }
 
-    if (!data._doc.admin) {
+    if (!data.admin) {
         return 'Not an admin.';
     }
     return (

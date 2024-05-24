@@ -20,19 +20,18 @@ export default function ProfilePage() {
     const session = useSession();
     const { status } = session;
     const userImage = session.data?.user?.Image
-   
     useEffect(() => {
         setUserName(session.data?.user?.name);
         if (status === 'authenticated') {
             fetch('/api/profile').then(response => {
                 response.json().then(data => {
-                    setUserName(data._doc.name)
-                    setPhone(data._doc.phone)
-                    setAddress(data._doc.Address)
-                    setPostalcode(data._doc.Postalcode)
-                    setCity(data._doc.city)
-                    setCountry(data._doc.country)
-                    setIsAdmin(data._doc.admin);
+                    setUserName(data.name)
+                    setPhone(data.phone)
+                    setAddress(data.Address)
+                    setPostalcode(data.Postalcode)
+                    setCity(data.city)
+                    setCountry(data.country)
+                    setIsAdmin(data.admin);
                     setProfilefetched(true)
                 })
             }); 
@@ -109,9 +108,20 @@ export default function ProfilePage() {
                             <input type="text" placeholder="City" value={city} onChange={ev => setCity(ev.target.value)} />
                             <input type="text" placeholder="Postal code" value={Postalcode} onChange={ev => setPostalcode(ev.target.value)} />
                         </div>
-                        
                         <input type="text" placeholder="Country" value={country} onChange={ev => setCountry(ev.target.value)} />
-                    <button type='submit'>Save</button>
+                        {isAdmin && (
+                            <div>
+                                <label className="p-2 inline-flex items-center gap-2 mb-2" htmlFor="adminCb">
+                                    <input
+                                        id="adminCb" type="checkbox" className="" value={'1'}
+                                        checked={isAdmin}
+                                        onChange={ev => setIsAdmin(ev.target.checked)}
+                                    />
+                                    <span>Admin</span>
+                                </label>
+                            </div>
+                        )}
+                        <button type='submit'>Save</button>
                 </div>
             </div>
             </form>

@@ -72,7 +72,7 @@ export default function MenuItemEditPage() {
         return 'Loading user info...';
     }
 
-    if (!data._doc.admin) {
+    if (!data.admin) {
         return 'Not an admin.';
     }
     return (

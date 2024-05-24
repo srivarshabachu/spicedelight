@@ -22,7 +22,7 @@ export default function MenuItemPage() {
         return 'Loading user info...';
     }
 
-    if (!data?._doc?.admin) {
+    if (!data?.admin) {
         return 'Not an admin.';
     }
 
