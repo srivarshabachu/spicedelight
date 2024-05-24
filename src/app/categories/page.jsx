@@ -3,7 +3,9 @@ import UserTabs from "../../components/layout/Usertabs"
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useEffect } from "react";
-import {useProfile} from "../../components/UseProfile"
+import { useProfile } from "../../components/UseProfile"
+import Trash from '../../components/icons/Trash'
+import DeleteButton from '../../components/DeleteButton'
 export default function Categories() {
    
     const [categoryName, setCategoryName] = useState('');
@@ -121,7 +123,7 @@ export default function Categories() {
                         <div className="grow">
                             {c.name}
                         </div>
-                        <div className="flex gap-1">
+                        <div className="flex gap-6">
                             <button type="button"
                                 onClick={() => {
                                     setEditedCategory(c);
@@ -130,7 +132,9 @@ export default function Categories() {
                             >
                                 Edit
                             </button>
-                            
+                            <DeleteButton
+                                label="Delete"
+                                onDelete={() => handleDeleteClick(c._id)} />
                         </div>
                     </div>
                 ))}

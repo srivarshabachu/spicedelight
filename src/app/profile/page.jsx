@@ -20,18 +20,18 @@ export default function ProfilePage() {
     const session = useSession();
     const { status } = session;
     const userImage = session.data?.user?.Image
+   
     useEffect(() => {
         setUserName(session.data?.user?.name);
         if (status === 'authenticated') {
             fetch('/api/profile').then(response => {
-                
                 response.json().then(data => {
-                    console.log(data)
-                    setPhone(data.phone)
-                    setAddress(data.Address)
-                    setPostalcode(data.Postalcode)
-                    setCity(data.city)
-                    setCountry(data.country)
+                    setUserName(data._doc.name)
+                    setPhone(data._doc.phone)
+                    setAddress(data._doc.Address)
+                    setPostalcode(data._doc.Postalcode)
+                    setCity(data._doc.city)
+                    setCountry(data._doc.country)
                     setIsAdmin(data._doc.admin);
                     setProfilefetched(true)
                 })
@@ -58,7 +58,6 @@ export default function ProfilePage() {
     // }
     async function handleProfileInfoUpdate(ev) {
         ev.preventDefault();
-        console.log("In handle function")
         const savingPromise = new Promise(async (resolve, reject) => {
             const response = await fetch('/api/profile', {
                 method: 'PUT',

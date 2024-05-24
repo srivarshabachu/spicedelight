@@ -20,7 +20,7 @@ section.hero{
     @apply grid;
     grid-template-columns: .7fr .7fr;
 }
-input[type="email"] ,input[type="tel"], input[type="password"],input[type="text"]{
+select ,input[type="email"] ,input[type="tel"], input[type="password"],input[type="text"]{
     display: block;
     margin: auto;
     background-color: #c23616;
@@ -40,7 +40,7 @@ input[type="password"]:disabled,
 input[type="text"]:disabled {
     @apply bg-gray-300 border-0 cursor-not-allowed text-gray-100;
 }
-.grow> input[type = "email"] , input[type = "text"]{
+.grow> select ,input[type = "email"] , input[type = "text"]{
     background-color: #c23616;
     color: #fff;
     padding: 10px 40px;
@@ -52,6 +52,7 @@ input[type="text"]:disabled {
 button{
     text : block;
     border: black;
+    
 }
 button[type="submit"]{
     display: block;

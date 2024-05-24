@@ -1,10 +1,11 @@
 import { model, models, Schema } from "mongoose";
 
 const UserInfoSchema = new Schema({
+    name :{type:String} ,
     email: { type: String, required: true },
-    streetAddress: { type: String },
-    postalCode: { type: String },
+    Address: { type: String },
     city: { type: String },
+    Postalcode: { type: String },
     country: { type: String },
     phone: { type: String },
     admin: { type: Boolean, default: false },
